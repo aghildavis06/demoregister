@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+
+    <title>Register Form</title>
+  </head>
+  <body style="background-image: url(../media/pictures/1360582.jpg)">
+    <h2
+      style="
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+        color: aqua;
+        font-weight: 600;
+      "
+    >
+      Register Your Account
+    </h2>
+    <form action="register" method="post">
+      {% csrf_token %}
+      <div class="container">
+        <div class="form-floating mb-2">
+          <input
+            type="text"
+            name="username"
+            class="form-control"
+            id="floatingInput"
+            placeholder="name@example.com"
+          />
+          <label for="floatingInput">Username</label>
+        </div>
+
+        <!--    <input type="text" name="username" placeholder="Enter the username"><br>-->
+        <div class="form-floating mb-2">
+          <input
+            type="text"
+            name="firstname"
+            class="form-control"
+            id="floatingInput"
+            placeholder="Enter the firstname"
+          />
+          <label for="floatingInput">Enter The Firstname</label>
+        </div>
+        <!-- <input type="text" name="firstname" placeholder="Enter the firstname"><br> -->
+        <div class="form-floating mb-2">
+          <input
+            type="text"
+            name="lastname"
+            class="form-control"
+            id="floatingInput"
+            placeholder="Enter the lastname"
+          />
+          <label for="floatingInput">Enter The Lastname</label>
+        </div>
+        <!-- <input type="text" name="lastname" placeholder="Enter the lastname"><br> -->
+        <div class="form-floating mb-2">
+          <input
+            type="email"
+            name="email"
+            class="form-control"
+            id="floatingInput"
+            placeholder="Enter the email"
+          />
+          <label for="floatingInput">Email</label>
+        </div>
+        <!-- <input type="email" name="email" placeholder="Enter the email"><br> -->
+        <div class="form-floating mb-2">
+          <input
+            type="password"
+            name="password"
+            class="form-control"
+            id="floatingInput"
+            placeholder="Enter the password"
+          />
+          <label for="floatingInput">Password</label>
+        </div>
+        <!-- <input type="password" name="password" placeholder="Enter the password"><br> -->
+        <div class="form-floating mb-2">
+          <input
+            type="password"
+            name="conpassword"
+            class="form-control"
+            id="floatingInput"
+            placeholder="Enter the password"
+          />
+          <label for="floatingInput">Confirm Password</label>
+        </div>
+        <!-- <input type="password" name="conpassword" placeholder="Enter the password again"><br> -->
+        <input
+          type="submit"
+          class="btn btn-outline-success"
+          value="Register"
+          style="font-family: Verdana, Geneva, Tahoma, sans-serif"
+        />
+      </div>
+    </form>
+    {% for msg in messages %} 
+   <h1 style="color: aqua;text-align: center;text-transform: capitalize;">{{msg}} </h1> 
+    {% endfor %}
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
